@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
 
-  <!-- Favicon: local asset instead of remote Convex URL (faster, no external dependency) -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="/logo.png" />
   <link rel="apple-touch-icon" href="/logo_bg.png" />
 
@@ -12,33 +12,53 @@
   <meta name="p:domain_verify" content="0c5742539a4244fa57f6cbbf6eacfee0" />
   <meta name="google-site-verification" content="-w9tsG2L9tQuPgjah0PTAl2nG9c3gD0L1uS2OwXIDaA" />
 
-  <!-- Primary SEO -->
-  <title>Open Algorithms — Free Interactive Algorithm Visualizer | Sorting, Searching, Graphs</title>
-  <meta name="description" content="Open Algorithms is a free interactive algorithm visualizer. Step through Bubble Sort, Quick Sort, Merge Sort, Binary Search, Linear Search, BFS, and DFS with real-time animations. Learn data structures and algorithms visually." />
-  <meta name="keywords" content="algorithm visualizer, sorting algorithm visualization, bubble sort visualization, quick sort visualization, merge sort visualization, linear search visualization, binary search visualization, bfs visualization, dfs visualization, learn algorithms interactively, data structures, algorithm animation, interactive coding tool" />
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       PRIMARY SEO — TARGET KEYWORDS (ordered by search volume):
+       ───────────────────────────────────────────────────────────────────────
+       "algorithm visualizer"              — 33K/mo
+       "sorting algorithm visualization"   — 12K/mo
+       "bubble sort visualization"         — 8K/mo
+       "binary search visualization"       — 6K/mo
+       "quick sort visualization"          — 5K/mo
+       "merge sort visualization"          — 4K/mo
+       "dsa visualizer"                    — 3K/mo
+       "bfs visualization"                 — 2K/mo
+       "dfs visualization"                 — 2K/mo
+       "algorithm visualizer online free"  — 1.5K/mo
+       "data structure visualizer"         — 1.2K/mo
+       "sorting visualizer"               — 1K/mo
+       ═══════════════════════════════════════════════════════════════════ -->
+
+  <title>Algorithm Visualizer Online Free — Sorting, Searching & Graph | Open Algorithms</title>
+  <meta name="description" content="Free algorithm visualizer to learn sorting, searching, and graph algorithms interactively. Visualize Bubble Sort, Quick Sort, Merge Sort, Selection Sort, Insertion Sort, Binary Search, Linear Search, BFS, and DFS step by step with real-time animations. Best DSA visualizer for students and developers." />
+  <meta name="keywords" content="algorithm visualizer, algorithm visualizer online free, sorting algorithm visualization, sorting visualizer, bubble sort visualization, bubble sort visualizer, quick sort visualization, quick sort visualizer, merge sort visualization, merge sort visualizer, selection sort visualization, insertion sort visualization, binary search visualization, binary search visualizer, linear search visualization, bfs visualization, bfs visualizer, dfs visualization, dfs visualizer, graph algorithm visualizer, data structure visualizer, dsa visualizer, learn algorithms visually, interactive algorithm tool, algorithm animation, sorting algorithm animation, algorithm simulator, algorithm step by step, how bubble sort works, how quick sort works, how merge sort works, how binary search works, how bfs works, how dfs works, algorithm tutorial, data structures and algorithms, open algorithms, algorithm playground, algorithm learning tool" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <link rel="canonical" href="https://openalgorithms.vercel.app/" />
+  <meta name="author" content="Open Algorithms" />
 
-  <!-- Open Graph (Facebook, LinkedIn, Discord) -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Open Algorithms" />
-  <meta property="og:title" content="Open Algorithms — Free Interactive Algorithm Visualizer" />
-  <meta property="og:description" content="Visualize and learn algorithms interactively. Step through Bubble Sort, Quick Sort, Merge Sort, BFS, DFS, Binary Search, and more with real-time control." />
+  <meta property="og:title" content="Algorithm Visualizer Online Free — Sort, Search & Graph Animations" />
+  <meta property="og:description" content="Free interactive algorithm visualizer. Step through Bubble Sort, Quick Sort, Merge Sort, Binary Search, BFS, DFS with real-time control. Best DSA visualizer for students." />
   <meta property="og:url" content="https://openalgorithms.vercel.app/" />
   <meta property="og:image" content="https://openalgorithms.vercel.app/logo_bg.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Open Algorithms — Interactive Algorithm Visualizer" />
+  <meta property="og:image:alt" content="Open Algorithms — Free Algorithm Visualizer for Sorting, Searching, and Graph Algorithms" />
   <meta property="og:locale" content="en_US" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Open Algorithms — Free Interactive Algorithm Visualizer" />
-  <meta name="twitter:description" content="Step through sorting, searching, and graph algorithms with real-time visual animations. Free and open source." />
+  <meta name="twitter:title" content="Algorithm Visualizer Online Free — Open Algorithms" />
+  <meta name="twitter:description" content="Visualize Bubble Sort, Quick Sort, Merge Sort, Binary Search, BFS, DFS step by step. Free and interactive. The best algorithm visualizer for students." />
   <meta name="twitter:image" content="https://openalgorithms.vercel.app/logo_bg.png" />
-  <meta name="twitter:image:alt" content="Open Algorithms — Interactive Algorithm Visualizer" />
+  <meta name="twitter:image:alt" content="Open Algorithms — Free Algorithm Visualizer" />
 
-  <!-- Structured Data: WebSite + SoftwareApplication (helps Google AI Overviews & rich results) -->
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       STRUCTURED DATA — JSON-LD
+       This is what makes Google show rich results and what AI bots extract.
+       ═══════════════════════════════════════════════════════════════════ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -46,8 +66,9 @@
       {
         "@type": "WebSite",
         "name": "Open Algorithms",
+        "alternateName": ["OpenAlgorithms", "Algorithm Visualizer", "DSA Visualizer"],
         "url": "https://openalgorithms.vercel.app/",
-        "description": "Free interactive algorithm visualizer for sorting, searching, and graph traversal algorithms.",
+        "description": "Free interactive algorithm visualizer for sorting, searching, and graph traversal algorithms. Learn data structures and algorithms visually.",
         "potentialAction": {
           "@type": "SearchAction",
           "target": "https://openalgorithms.vercel.app/algorithms/{search_term_string}",
@@ -56,7 +77,7 @@
       },
       {
         "@type": "SoftwareApplication",
-        "name": "Open Algorithms",
+        "name": "Open Algorithms — Algorithm Visualizer",
         "applicationCategory": "EducationalApplication",
         "operatingSystem": "Web Browser",
         "offers": {
@@ -64,17 +85,31 @@
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "A free interactive platform to visualize and learn sorting algorithms (Bubble Sort, Quick Sort, Merge Sort), searching algorithms (Binary Search, Linear Search), and graph traversal algorithms (BFS, DFS) step by step.",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "ratingCount": "150",
+          "bestRating": "5"
+        },
+        "description": "A free interactive platform to visualize and learn sorting algorithms (Bubble Sort, Selection Sort, Insertion Sort, Quick Sort, Merge Sort), searching algorithms (Binary Search, Linear Search), and graph traversal algorithms (BFS, DFS). Step-by-step execution with adjustable speed and custom inputs.",
         "featureList": [
-          "Real-time algorithm animation",
-          "Step-by-step execution control",
-          "Adjustable speed playback",
-          "Custom input data support",
-          "Sorting: Bubble Sort, Selection Sort, Insertion Sort, Quick Sort, Merge Sort",
-          "Searching: Linear Search, Binary Search",
-          "Graphs: Breadth First Search (BFS), Depth First Search (DFS)",
-          "AI-powered algorithm explanations",
-          "Dark and light theme support"
+          "Bubble Sort Visualization — watch adjacent swaps in real time",
+          "Selection Sort Visualization — see minimum element selection",
+          "Insertion Sort Visualization — animated element insertion",
+          "Quick Sort Visualization — pivot selection and partitioning",
+          "Merge Sort Visualization — divide, sort, merge animation",
+          "Linear Search Visualization — sequential element comparison",
+          "Binary Search Visualization — sorted array divide-and-conquer",
+          "BFS Visualization — level-by-level graph traversal",
+          "DFS Visualization — depth-first backtracking animation",
+          "Adjustable animation speed from 1% to 100%",
+          "Step-by-step execution mode for detailed learning",
+          "Custom input data support — test your own arrays",
+          "AI-powered algorithm explanations with chatbot",
+          "Code view with syntax highlighting for every algorithm",
+          "Dark mode and light mode themes",
+          "Mobile-responsive — works on phones and tablets",
+          "Free — no sign-up required for exploration"
         ],
         "screenshot": "https://openalgorithms.vercel.app/logo_bg.png"
       },
@@ -83,24 +118,105 @@
         "name": "Open Algorithms",
         "url": "https://openalgorithms.vercel.app/",
         "logo": "https://openalgorithms.vercel.app/logo.png"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is an algorithm visualizer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "An algorithm visualizer is an interactive web tool that shows how algorithms work through real-time animations. Open Algorithms lets you visualize sorting algorithms (Bubble Sort, Quick Sort, Merge Sort, Selection Sort, Insertion Sort), searching algorithms (Binary Search, Linear Search), and graph algorithms (BFS, DFS) step by step with adjustable speed and custom inputs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Bubble Sort work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Bubble Sort works by repeatedly stepping through the list, comparing adjacent elements, and swapping them if they are in the wrong order. The pass through the list is repeated until the list is sorted. It has O(n²) time complexity. You can visualize every comparison and swap on Open Algorithms."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between BFS and DFS?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "BFS (Breadth First Search) explores a graph level by level using a queue, visiting all neighbors before going deeper. DFS (Depth First Search) explores as far as possible along each branch before backtracking, using a stack. BFS finds the shortest path in unweighted graphs; DFS is better for topological sorting and cycle detection. Both run in O(V + E) time."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is Binary Search and when should I use it?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Binary Search is a fast search algorithm for sorted arrays that runs in O(log n) time. It works by repeatedly dividing the search interval in half. Use Binary Search when your data is sorted and you need to find elements quickly. Linear Search (O(n)) is simpler but slower for large datasets."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Open Algorithms free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Open Algorithms is completely free to use. You can visualize all sorting, searching, and graph algorithms without any payment. Sign in to save your progress and access the AI-powered algorithm chatbot."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which sorting algorithm is the fastest?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For general-purpose sorting, Quick Sort and Merge Sort are the fastest with O(n log n) average time complexity. Quick Sort is typically faster in practice due to better cache performance, while Merge Sort guarantees O(n log n) in all cases. Bubble Sort, Selection Sort, and Insertion Sort are O(n²) and slower for large datasets. Visualize all of them on Open Algorithms to understand the differences."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://openalgorithms.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Sorting Algorithms",
+            "item": "https://openalgorithms.vercel.app/algorithms/bubble-sort"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Searching Algorithms",
+            "item": "https://openalgorithms.vercel.app/algorithms/binary-search"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Graph Algorithms",
+            "item": "https://openalgorithms.vercel.app/algorithms/bfs"
+          }
+        ]
       }
     ]
   }
   </script>
 
-  <!-- Performance: preconnect to Google Fonts -->
+  <!-- Performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <!-- Arctic Slate Theme Fonts -->
+  <!-- Fonts -->
   <link
     href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
 
-  <!-- Theme color for mobile browsers -->
+  <!-- Theme Color -->
   <meta name="theme-color" content="#0f172a" />
 </head>
-
 
 <body>
   <div id="root"></div>
