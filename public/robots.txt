@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://openalgorithms.vercel.app/sitemap.xml
