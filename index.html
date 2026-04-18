@@ -3,27 +3,102 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/png"
-    href="https://harmless-tapir-303.convex.cloud/api/storage/7354668e-8a24-46fa-a42b-b8b3a8167862" />
+
+  <!-- Favicon: local asset instead of remote Convex URL (faster, no external dependency) -->
+  <link rel="icon" type="image/png" href="/logo.png" />
+  <link rel="apple-touch-icon" href="/logo_bg.png" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="p:domain_verify" content="0c5742539a4244fa57f6cbbf6eacfee0" />
   <meta name="google-site-verification" content="-w9tsG2L9tQuPgjah0PTAl2nG9c3gD0L1uS2OwXIDaA" />
-  <title>Open Algorithms — Free Interactive Algorithm Visualizer</title>
-  <meta name="description" content="Open Algorithms is a free interactive algorithm visualizer. Visualize Bubble Sort, Quick Sort, Merge Sort, Binary Search, Linear Search, BFS, and DFS step by step." />
-  <meta name="keywords" content="algorithm visualizer, sorting algorithm visualization, bubble sort visualization, quick sort visualization, merge sort visualization, linear search visualization, binary search visualization, bfs visualization, dfs visualization, learn algorithms interactively" />
-  <meta name="robots" content="index, follow" />
+
+  <!-- Primary SEO -->
+  <title>Open Algorithms — Free Interactive Algorithm Visualizer | Sorting, Searching, Graphs</title>
+  <meta name="description" content="Open Algorithms is a free interactive algorithm visualizer. Step through Bubble Sort, Quick Sort, Merge Sort, Binary Search, Linear Search, BFS, and DFS with real-time animations. Learn data structures and algorithms visually." />
+  <meta name="keywords" content="algorithm visualizer, sorting algorithm visualization, bubble sort visualization, quick sort visualization, merge sort visualization, linear search visualization, binary search visualization, bfs visualization, dfs visualization, learn algorithms interactively, data structures, algorithm animation, interactive coding tool" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <link rel="canonical" href="https://openalgorithms.vercel.app/" />
 
-  <!-- Open Graph (for social sharing) -->
-  <meta property="og:title" content="Open Algorithms — Free Interactive Algorithm Visualizer" />
-  <meta property="og:description" content="Visualize and learn algorithms interactively. Step through Bubble Sort, Quick Sort, Merge Sort, BFS, DFS, Binary Search, and more." />
-  <meta property="og:url" content="https://openalgorithms.vercel.app/" />
+  <!-- Open Graph (Facebook, LinkedIn, Discord) -->
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Open Algorithms" />
+  <meta property="og:title" content="Open Algorithms — Free Interactive Algorithm Visualizer" />
+  <meta property="og:description" content="Visualize and learn algorithms interactively. Step through Bubble Sort, Quick Sort, Merge Sort, BFS, DFS, Binary Search, and more with real-time control." />
+  <meta property="og:url" content="https://openalgorithms.vercel.app/" />
+  <meta property="og:image" content="https://openalgorithms.vercel.app/logo_bg.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Open Algorithms — Interactive Algorithm Visualizer" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Open Algorithms — Free Interactive Algorithm Visualizer" />
+  <meta name="twitter:description" content="Step through sorting, searching, and graph algorithms with real-time visual animations. Free and open source." />
+  <meta name="twitter:image" content="https://openalgorithms.vercel.app/logo_bg.png" />
+  <meta name="twitter:image:alt" content="Open Algorithms — Interactive Algorithm Visualizer" />
+
+  <!-- Structured Data: WebSite + SoftwareApplication (helps Google AI Overviews & rich results) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "Open Algorithms",
+        "url": "https://openalgorithms.vercel.app/",
+        "description": "Free interactive algorithm visualizer for sorting, searching, and graph traversal algorithms.",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://openalgorithms.vercel.app/algorithms/{search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Open Algorithms",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "A free interactive platform to visualize and learn sorting algorithms (Bubble Sort, Quick Sort, Merge Sort), searching algorithms (Binary Search, Linear Search), and graph traversal algorithms (BFS, DFS) step by step.",
+        "featureList": [
+          "Real-time algorithm animation",
+          "Step-by-step execution control",
+          "Adjustable speed playback",
+          "Custom input data support",
+          "Sorting: Bubble Sort, Selection Sort, Insertion Sort, Quick Sort, Merge Sort",
+          "Searching: Linear Search, Binary Search",
+          "Graphs: Breadth First Search (BFS), Depth First Search (DFS)",
+          "AI-powered algorithm explanations",
+          "Dark and light theme support"
+        ],
+        "screenshot": "https://openalgorithms.vercel.app/logo_bg.png"
+      },
+      {
+        "@type": "Organization",
+        "name": "Open Algorithms",
+        "url": "https://openalgorithms.vercel.app/",
+        "logo": "https://openalgorithms.vercel.app/logo.png"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Performance: preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
   <!-- Arctic Slate Theme Fonts -->
   <link
     href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
+
+  <!-- Theme color for mobile browsers -->
+  <meta name="theme-color" content="#0f172a" />
 </head>
 
 

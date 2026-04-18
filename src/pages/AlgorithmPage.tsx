@@ -45,19 +45,95 @@ export default function AlgorithmPage() {
   // ── Dynamic SEO per algorithm page ──────────────────────────────────────
   useEffect(() => {
     if (!algorithm) return;
-    // Set page title
-    document.title = `${algorithm.name} - Open Algorithms`;
-    // Set meta description
-    let metaDesc = document.querySelector<HTMLMetaElement>('meta[name="description"]');
-    if (!metaDesc) {
-      metaDesc = document.createElement("meta");
-      metaDesc.name = "description";
-      document.head.appendChild(metaDesc);
+
+    const baseUrl = "https://openalgorithms.vercel.app";
+    const pageUrl = `${baseUrl}/algorithms/${algorithm.slug}`;
+    const pageTitle = `${algorithm.name} Visualization — Interactive ${algorithm.name} Algorithm | Open Algorithms`;
+    const pageDescription = `${algorithm.description} Time complexity: ${algorithm.complexity.time}. Space complexity: ${algorithm.complexity.space}. Step through ${algorithm.name} with real-time interactive visualization on Open Algorithms.`;
+
+    // 1. Title
+    document.title = pageTitle;
+
+    // 2. Meta description
+    const setMeta = (attr: string, key: string, content: string) => {
+      let el = document.querySelector<HTMLMetaElement>(`meta[${attr}="${key}"]`);
+      if (!el) {
+        el = document.createElement("meta");
+        el.setAttribute(attr, key);
+        document.head.appendChild(el);
+      }
+      el.content = content;
+    };
+
+    setMeta("name", "description", pageDescription);
+
+    // 3. Canonical URL
+    let canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.rel = "canonical";
+      document.head.appendChild(canonical);
     }
-    metaDesc.content = `${algorithm.description} Time complexity: ${algorithm.complexity.time}. Space complexity: ${algorithm.complexity.space}. Interactive visualization on Open Algorithms.`;
+    canonical.href = pageUrl;
+
+    // 4. Open Graph tags (per-page)
+    setMeta("property", "og:title", pageTitle);
+    setMeta("property", "og:description", pageDescription);
+    setMeta("property", "og:url", pageUrl);
+    setMeta("property", "og:type", "article");
+
+    // 5. Twitter Card tags (per-page)
+    setMeta("name", "twitter:title", pageTitle);
+    setMeta("name", "twitter:description", pageDescription);
+
+    // 6. JSON-LD Structured Data (HowTo + Article schema)
+    const existingLd = document.getElementById("algo-jsonld");
+    if (existingLd) existingLd.remove();
+
+    const jsonLd = document.createElement("script");
+    jsonLd.id = "algo-jsonld";
+    jsonLd.type = "application/ld+json";
+    jsonLd.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": `How to Visualize ${algorithm.name}`,
+      "description": pageDescription,
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Select the Algorithm",
+          "text": `Navigate to the ${algorithm.name} page on Open Algorithms.`
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Configure Input Data",
+          "text": `Enter custom values or use the randomly generated dataset for ${algorithm.name}.`
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Run the Visualization",
+          "text": `Press Play to watch ${algorithm.name} execute step by step with real-time animations. Adjust speed or use Step mode.`
+        }
+      ],
+      "tool": {
+        "@type": "SoftwareApplication",
+        "name": "Open Algorithms",
+        "url": baseUrl
+      },
+      "totalTime": "PT5M",
+      "about": {
+        "@type": "Thing",
+        "name": algorithm.name,
+        "description": algorithm.description
+      }
+    });
+    document.head.appendChild(jsonLd);
+
     return () => {
       // Restore defaults when leaving
-      document.title = "Open Algorithms";
+      document.title = "Open Algorithms — Free Interactive Algorithm Visualizer";
+      const ld = document.getElementById("algo-jsonld");
+      if (ld) ld.remove();
     };
   }, [algorithm]);
 

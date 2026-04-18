@@ -268,7 +268,7 @@ export default function Landing() {
         {/* SEO Content Section */}
         <section id="learn-algorithms" className="py-24 container px-4 md:px-8 mx-auto border-t border-border/50">
           <div className="max-w-4xl mx-auto prose prose-slate dark:prose-invert">
-            <h1 className="text-3xl md:text-5xl font-bold mb-8 text-primary">Free Interactive Algorithm Visualizer</h1>
+            <h2 className="text-3xl md:text-5xl font-bold mb-8 text-primary">Free Interactive Algorithm Visualizer</h2>
             <p className="text-lg text-muted-foreground mb-12">
               Open Algorithms is a free platform to learn and visualize algorithms step by step. Whether you're a student, developer, or just curious, our interactive tools help you understand how algorithms work — not just what they do.
             </p>
@@ -378,7 +378,7 @@ export default function Landing() {
                 Privacy Policy
               </Link>
               <p className="text-sm text-muted-foreground">
-                © 2025 Open Algorithms. All rights reserved.
+                © 2026 Open Algorithms. All rights reserved.
               </p>
             </div>
           </div>

@@ -1,3 +1,46 @@
+# Open Algorithms - robots.txt
+# Allow all search engines and AI bots for maximum visibility
+
 User-agent: *
 Allow: /
+Disallow: /api/
+
+# Sitemap
 Sitemap: https://openalgorithms.vercel.app/sitemap.xml
+
+# AI Search Bots - explicitly allowed for citation visibility
+# Google AI Overviews & Gemini
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# OpenAI (ChatGPT)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Microsoft Copilot (via Bing)
+User-agent: Bingbot
+Allow: /
+
+# Block training-only crawlers (they don't cite, just scrape)
+User-agent: CCBot
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /private/
