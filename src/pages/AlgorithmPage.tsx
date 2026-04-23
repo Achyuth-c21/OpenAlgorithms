@@ -197,46 +197,67 @@ export default function AlgorithmPage() {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none -z-10" />
 
         {/* ── Header ── */}
-        <header className="border-b border-border/20 flex items-center px-4 md:px-8 justify-between glass-mist z-10 sticky top-0 min-h-[56px] md:h-20 py-2 md:py-0 gap-3">
-          {/* Left: hamburger (mobile) + title */}
-          <div className="flex items-center gap-3 min-w-0">
-            <MobileSidebarDrawer />
-            <div className="min-w-0">
-              <h1 className="text-lg md:text-3xl font-display font-bold tracking-tight text-primary leading-tight truncate">{algorithm.name}</h1>
-              <p className="hidden sm:block text-xs md:text-sm text-muted-foreground max-w-sm md:max-w-xl line-clamp-1">{algorithm.description}</p>
+        <header className="border-b border-border/20 flex flex-col md:flex-row md:items-center px-4 md:px-8 justify-between glass-mist z-10 sticky top-0 min-h-[56px] md:h-20 py-2 gap-2 md:gap-3">
+          {/* Top Row: hamburger (mobile) + title */}
+          <div className="flex items-center justify-between w-full md:w-auto">
+            <div className="flex items-center gap-3 min-w-0">
+              <MobileSidebarDrawer />
+              <div className="min-w-0">
+                <h1 className="text-lg md:text-3xl font-display font-bold tracking-tight text-primary leading-tight truncate">{algorithm.name}</h1>
+                <p className="block text-[10px] md:text-sm text-muted-foreground line-clamp-1">{algorithm.description}</p>
+              </div>
+            </div>
+            
+            {/* The Code toggle and Theme button can stay on the right top on mobile for easy access */}
+            <div className="flex md:hidden items-center gap-1 shrink-0 ml-2">
+              <Button
+                variant={isCodeView ? "default" : "outline"}
+                size="sm"
+                onClick={() => setIsCodeView(!isCodeView)}
+                className={`rounded-full px-2 sm:px-4 ${isCodeView ? 'btn-primary-slate' : 'neumorphic-button border-0 hover:bg-transparent'}`}
+                aria-label={isCodeView ? "Visualize" : "Code"}
+              >
+                <Code2 className="h-4 w-4" />
+              </Button>
+              <Button variant="ghost" size="icon" onClick={toggleTheme} className="rounded-full h-8 w-8 hover:bg-transparent neumorphic-button border-0">
+                {theme === "light" ? <Moon className="h-4 w-4 text-primary" /> : <Sun className="h-4 w-4 text-primary" />}
+              </Button>
             </div>
           </div>
 
-          {/* Right: complexity (desktop only) + code toggle + theme */}
-          <div className="flex items-center gap-2 md:gap-4 shrink-0">
-            <div className="hidden sm:flex gap-3 md:gap-6 text-sm text-muted-foreground border-r border-border/20 pr-4">
-              <div className="flex flex-col items-end">
-                <span className="text-[10px] uppercase tracking-widest opacity-60 font-semibold mb-0.5">Time</span>
-                <Badge variant="secondary" className="font-mono font-bold text-primary bg-primary/10 border-0 text-xs shadow-none">
+          {/* Bottom Row on mobile / Right on desktop: complexity + buttons (desktop) */}
+          <div className="flex items-center justify-between md:justify-end gap-2 md:gap-4 shrink-0 w-full md:w-auto">
+            <div className="flex gap-4 md:gap-6 text-sm text-muted-foreground md:border-r border-border/20 md:pr-4 mx-auto md:mx-0">
+              <div className="flex items-center md:flex-col md:items-end gap-1.5 md:gap-0">
+                <span className="text-[10px] uppercase tracking-widest opacity-60 font-semibold mb-0 md:mb-0.5">Time</span>
+                <Badge variant="secondary" className="font-mono font-bold text-primary bg-primary/10 border-0 text-[10px] md:text-xs shadow-none">
                   {algorithm.complexity.time}
                 </Badge>
               </div>
-              <div className="flex flex-col items-end">
-                <span className="text-[10px] uppercase tracking-widest opacity-60 font-semibold mb-0.5">Space</span>
-                <Badge variant="secondary" className="font-mono font-bold text-primary bg-primary/10 border-0 text-xs shadow-none">
+              <div className="flex items-center md:flex-col md:items-end gap-1.5 md:gap-0">
+                <span className="text-[10px] uppercase tracking-widest opacity-60 font-semibold mb-0 md:mb-0.5">Space</span>
+                <Badge variant="secondary" className="font-mono font-bold text-primary bg-primary/10 border-0 text-[10px] md:text-xs shadow-none">
                   {algorithm.complexity.space}
                 </Badge>
               </div>
             </div>
-            {/* Code/Visualize toggle – icon only on mobile */}
-            <Button
-              variant={isCodeView ? "default" : "outline"}
-              size="sm"
-              onClick={() => setIsCodeView(!isCodeView)}
-              className={`rounded-full px-2 sm:px-4 ${isCodeView ? 'btn-primary-slate' : 'neumorphic-button border-0 hover:bg-transparent'}`}
-              aria-label={isCodeView ? "Visualize" : "Code"}
-            >
-              <Code2 className="h-4 w-4" />
-              <span className="hidden sm:inline ml-1.5">{isCodeView ? "Visualize" : "Code"}</span>
-            </Button>
-            <Button variant="ghost" size="icon" onClick={toggleTheme} className="rounded-full h-8 w-8 md:h-9 md:w-9 hover:bg-transparent neumorphic-button border-0">
-              {theme === "light" ? <Moon className="h-4 w-4 text-primary" /> : <Sun className="h-4 w-4 text-primary" />}
-            </Button>
+            
+            {/* Desktop toggles */}
+            <div className="hidden md:flex items-center gap-2">
+              <Button
+                variant={isCodeView ? "default" : "outline"}
+                size="sm"
+                onClick={() => setIsCodeView(!isCodeView)}
+                className={`rounded-full px-4 ${isCodeView ? 'btn-primary-slate' : 'neumorphic-button border-0 hover:bg-transparent'}`}
+                aria-label={isCodeView ? "Visualize" : "Code"}
+              >
+                <Code2 className="h-4 w-4" />
+                <span className="inline ml-1.5">{isCodeView ? "Visualize" : "Code"}</span>
+              </Button>
+              <Button variant="ghost" size="icon" onClick={toggleTheme} className="rounded-full h-9 w-9 hover:bg-transparent neumorphic-button border-0">
+                {theme === "light" ? <Moon className="h-4 w-4 text-primary" /> : <Sun className="h-4 w-4 text-primary" />}
+              </Button>
+            </div>
           </div>
         </header>
 
