@@ -93,7 +93,7 @@ function SidebarContent({ onLinkClick }: { onLinkClick?: () => void }) {
       <div className="p-6 border-b border-border/50">
         <Link to="/" className="flex items-center gap-3 group" onClick={onLinkClick}>
           <img
-            src="https://harmless-tapir-303.convex.cloud/api/storage/bcd7fca8-acbb-499c-8dac-8531f807a2bf"
+            src="/oa-logo.png"
             alt="OA Logo"
             className="w-8 h-8 rounded-lg shadow-sm group-hover:scale-105 transition-transform duration-300 object-cover"
           />

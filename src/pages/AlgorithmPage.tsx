@@ -39,7 +39,7 @@ export default function AlgorithmPage() {
   const [graph, setGraph] = useState(defaultGraph);
 
   const toggleTheme = () => {
-    setTheme(prev => prev === "light" ? "dark" : "light");
+    setTheme(theme === "light" ? "dark" : "light");
   };
 
   // ── Dynamic SEO per algorithm page ──────────────────────────────────────

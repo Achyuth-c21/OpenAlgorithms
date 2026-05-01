@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MessageSquare, X, Send, Bot, User, Loader2 } from "lucide-react";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
-import { useUser, useAuth } from "@clerk/clerk-react";
+import { useAuth } from "@clerk/clerk-react";
 
 interface Message {
   role: "user" | "assistant";

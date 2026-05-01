@@ -1,4 +1,3 @@
-import React from "react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -40,7 +39,7 @@ export function LogoDropdown() {
               className="h-10 w-10 relative rounded-full neumorphic-button hover:bg-transparent transition-transform hover:scale-105 ml-2 border-0 overflow-hidden"
             >
               <img
-                src="https://harmless-tapir-303.convex.cloud/api/storage/bcd7fca8-acbb-499c-8dac-8531f807a2bf"
+                src="/oa-logo.png"
                 alt="Logo"
                 className="rounded-full object-cover w-full h-full p-0.5"
               />

@@ -16,8 +16,6 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          // React core
-          "vendor-react": ["react", "react-dom"],
           // Routing
           "vendor-router": ["react-router"],
           // Animation
