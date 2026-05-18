@@ -22,7 +22,7 @@ import { useTheme } from "next-themes";
 
 
 
-import { AIChat } from "@/components/AIChat";
+
 
 export default function AlgorithmPage() {
   const { slug } = useParams();
@@ -325,7 +325,7 @@ export default function AlgorithmPage() {
           </div>
         </div>
       </main>
-      <AIChat context={algorithm.name} />
+
     </div>
   );
 }

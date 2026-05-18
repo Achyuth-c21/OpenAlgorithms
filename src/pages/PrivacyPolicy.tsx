@@ -21,28 +21,21 @@ export default function PrivacyPolicy() {
           <h2 className="text-2xl font-bold text-primary mt-8 mb-4">1. Information We Collect</h2>
           <p>When you use Open Algorithms, we may collect the following types of information:</p>
           <ul className="list-disc pl-6 space-y-2">
-            <li><strong>Account Information:</strong> If you create an account, we collect your email address and profile information (such as name or profile picture) provided via our authentication provider (Clerk).</li>
             <li><strong>Usage Data:</strong> We automatically collect certain information when you visit, use, or navigate the site. This may include your IP address, browser type, device type, operating system, and data about how you interact with our application (e.g., algorithms visualized, settings changed).</li>
-            <li><strong>Chat Data:</strong> If you use our AI chat feature, the messages you send are processed by our backend and third-party AI services providers (Google Gemini) to provide responses.</li>
           </ul>
 
           <h2 className="text-2xl font-bold text-primary mt-8 mb-4">2. How We Use Your Information</h2>
           <p>We use the information we collect or receive to:</p>
           <ul className="list-disc pl-6 space-y-2">
-            <li>Facilitate account creation and authentication and otherwise manage user accounts.</li>
             <li>Provide, operate, and maintain our application.</li>
             <li>Improve, personalize, and expand our services through features and algorithms.</li>
             <li>Understand and analyze how you use our platform to develop new products, services, features, and functionality.</li>
-            <li>Communicate with you regarding updates, security alerts, and support messages.</li>
           </ul>
 
           <h2 className="text-2xl font-bold text-primary mt-8 mb-4">3. Third-Party Services</h2>
           <p>We rely on several third-party services to operate Open Algorithms:</p>
           <ul className="list-disc pl-6 space-y-2">
-            <li><strong>Authentication:</strong> We use Clerk (<a href="https://clerk.com/privacy" target="_blank" rel="noreferrer">Privacy Policy</a>) to manage user authentication safely and securely.</li>
             <li><strong>Hosting:</strong> Our frontend is hosted on Vercel (<a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noreferrer">Privacy Policy</a>).</li>
-            <li><strong>Database:</strong> We use MongoDB to securely store user data, chat history, and application state.</li>
-            <li><strong>AI Features:</strong> We use Google's Gemini API for our AI assistant. Please note that data sent to the AI might be processed according to Google's data privacy standards.</li>
           </ul>
 
           <h2 className="text-2xl font-bold text-primary mt-8 mb-4">4. Data Security</h2>

@@ -6,9 +6,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useTheme } from "next-themes";
-import { Home, Moon, Sun, LogIn } from "lucide-react";
+import { Home, Moon, Sun } from "lucide-react";
 import { useNavigate } from "react-router";
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 
 export function LogoDropdown() {
   const { theme, setTheme } = useTheme();
@@ -20,66 +19,43 @@ export function LogoDropdown() {
 
   return (
     <div className="flex items-center gap-4">
-      <SignedIn>
-        <UserButton 
-          appearance={{
-            elements: {
-              userButtonAvatarBox: "h-10 w-10 neumorphic-button hover:scale-105 transition-transform"
-            }
-          }}
-        />
-      </SignedIn>
-      
-      <SignedOut>
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="h-10 w-10 relative rounded-full neumorphic-button hover:bg-transparent transition-transform hover:scale-105 ml-2 border-0 overflow-hidden"
-            >
-              <img
-                src="/oa-logo.png"
-                alt="Logo"
-                className="rounded-full object-cover w-full h-full p-0.5"
-              />
-            </Button>
-          </DropdownMenuTrigger>
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="h-10 w-10 relative rounded-full neumorphic-button hover:bg-transparent transition-transform hover:scale-105 ml-2 border-0 overflow-hidden"
+          >
+            <img
+              src="/oa-logo.png"
+              alt="Logo"
+              className="rounded-full object-cover w-full h-full p-0.5"
+            />
+          </Button>
+        </DropdownMenuTrigger>
 
-          <DropdownMenuContent align="end" className="w-64 neumorphic-card border-none mt-4 p-2 z-[100]">
-            <DropdownMenuItem
-              onClick={() => navigate("/")}
-              className="cursor-pointer focus:bg-secondary rounded-xl py-3 px-3"
-            >
-              <Home className="mr-3 h-4 w-4 text-primary" />
-              <span className="font-medium">Landing Page</span>
-            </DropdownMenuItem>
+        <DropdownMenuContent align="end" className="w-64 neumorphic-card border-none mt-4 p-2 z-[100]">
+          <DropdownMenuItem
+            onClick={() => navigate("/")}
+            className="cursor-pointer focus:bg-secondary rounded-xl py-3 px-3"
+          >
+            <Home className="mr-3 h-4 w-4 text-primary" />
+            <span className="font-medium">Landing Page</span>
+          </DropdownMenuItem>
 
-            <DropdownMenuItem
-              onClick={toggleTheme}
-              className="cursor-pointer focus:bg-secondary rounded-xl py-3 px-3"
-            >
-              {theme === "light" ? (
-                <Moon className="mr-3 h-4 w-4 text-primary" />
-              ) : (
-                <Sun className="mr-3 h-4 w-4 text-primary" />
-              )}
-              <span className="font-medium">{theme === "light" ? "Dark Mode" : "Light Mode"}</span>
-            </DropdownMenuItem>
-
-            <div className="mt-2 pt-2 border-t border-border/20">
-              <SignInButton mode="modal">
-                <DropdownMenuItem
-                  className="cursor-pointer focus:bg-secondary rounded-xl py-3 px-3 w-full"
-                >
-                  <LogIn className="mr-3 h-4 w-4 text-primary" />
-                  <span className="font-medium">Sign In</span>
-                </DropdownMenuItem>
-              </SignInButton>
-            </div>
-          </DropdownMenuContent>
-        </DropdownMenu>
-      </SignedOut>
+          <DropdownMenuItem
+            onClick={toggleTheme}
+            className="cursor-pointer focus:bg-secondary rounded-xl py-3 px-3"
+          >
+            {theme === "light" ? (
+              <Moon className="mr-3 h-4 w-4 text-primary" />
+            ) : (
+              <Sun className="mr-3 h-4 w-4 text-primary" />
+            )}
+            <span className="font-medium">{theme === "light" ? "Dark Mode" : "Light Mode"}</span>
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
     </div>
   );
 }

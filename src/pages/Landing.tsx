@@ -5,19 +5,14 @@ import { ArrowRight, BarChart3, Search, Network } from "lucide-react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { LiquidEffectAnimation } from "@/components/ui/liquid-effect-animation";
 import { useTheme } from "next-themes";
-import { useAuth, SignInButton, SignedIn, SignedOut } from "@clerk/clerk-react";
 
 export default function Landing() {
   const { scrollY } = useScroll();
   const { theme } = useTheme();
   const navigate = useNavigate();
 
-  const { isSignedIn } = useAuth();
-
   const handleVisualizerClick = () => {
-    if (isSignedIn) {
-      navigate("/algorithms/bubble-sort");
-    }
+    navigate("/algorithms/bubble-sort");
   };
 
   // Parallax transforms
@@ -73,13 +68,6 @@ export default function Landing() {
           </nav>
 
           <div className="flex items-center gap-2 sm:gap-3">
-            <SignedOut>
-              <SignInButton mode="modal">
-                <Button variant="ghost" className="text-primary hover:bg-primary/10 px-4 rounded-full font-bold">
-                  Sign In
-                </Button>
-              </SignInButton>
-            </SignedOut>
             <LogoDropdown />
           </div>
         </div>
@@ -117,25 +105,13 @@ export default function Landing() {
             transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
           >
-            <SignedIn>
-              <Button
-                size="lg"
-                className="h-14 px-8 text-lg btn-primary-slate cursor-pointer"
-                onClick={handleVisualizerClick}
-              >
-                Launch Visualizer <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </SignedIn>
-            <SignedOut>
-              <SignInButton mode="modal">
-                <Button
-                  size="lg"
-                  className="h-14 px-8 text-lg btn-primary-slate cursor-pointer"
-                >
-                  Launch Visualizer <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </SignInButton>
-            </SignedOut>
+            <Button
+              size="lg"
+              className="h-14 px-8 text-lg btn-primary-slate cursor-pointer"
+              onClick={handleVisualizerClick}
+            >
+              Launch Visualizer <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
           </motion.div>
         </section>
 
@@ -246,25 +222,13 @@ export default function Landing() {
               Join the elite tier of developers leveraging Open Algorithms to dissect, understand, and dominate intricate computational paradigms.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-              <SignedIn>
-                <Button
-                  size="lg"
-                  className="h-14 px-10 text-lg btn-primary-slate cursor-pointer"
-                  onClick={handleVisualizerClick}
-                >
-                  Initialize System
-                </Button>
-              </SignedIn>
-              <SignedOut>
-                <SignInButton mode="modal">
-                  <Button
-                    size="lg"
-                    className="h-14 px-10 text-lg btn-primary-slate cursor-pointer"
-                  >
-                    Initialize System
-                  </Button>
-                </SignInButton>
-              </SignedOut>
+              <Button
+                size="lg"
+                className="h-14 px-10 text-lg btn-primary-slate cursor-pointer"
+                onClick={handleVisualizerClick}
+              >
+                Initialize System
+              </Button>
             </div>
           </div>
         </motion.section>
